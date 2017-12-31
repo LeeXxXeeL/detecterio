@@ -1,5 +1,5 @@
 {
-    "name": "ProLexSoft/detecterio",
+    "name": "prolexsoft/detecterio",
     "description": "Library for DetecterIO Integration",
     "keywords": ["symfony", "symfony3", "symfony2", "security", "detection", "bots", "hackers", "constraints", "constraint", "validator", "validation"],
     "license": "MIT",
