@@ -19,7 +19,8 @@ class RequestPrepareService
             "userData" => array(
                 "ip" => $this->getRequestIp(),
                 "host" => $_SERVER['HTTP_HOST'],
-                "requestURI" => $_SERVER['SCRIPT_NAME'],
+                "requestURI" => $_SERVER['HTTP_REFERER'],
+                "scriptName" => $_SERVER['SCRIPT_NAME'],
                 "userAgent" => $_SERVER['HTTP_USER_AGENT'],
                 "isVerifiedAsHuman" => $verifiedAsHuman
             ),
