@@ -20,7 +20,7 @@ class DetecterIOClient
 
         $response = HttpRequester::post(self::DETECTER_API_URL . "/detect/badRequest", $preparedData);
 
-        if ($response['success'] == true) {
+        if ($response['success'] === true) {
             return $response['data']['bad'];
         }
 

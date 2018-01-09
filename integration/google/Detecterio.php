@@ -57,6 +57,9 @@ class Detecterio
         }
     }
 
+    /**
+     * @author Alexander Schikowsky
+     */
     public function dummyRequestFunction()
     {
         $verifiedAsHuman = false;
