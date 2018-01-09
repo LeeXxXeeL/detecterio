@@ -1,9 +1,8 @@
 <?php
-include dirname(__FILE__).'/../../src/autoload.php';
+include dirname(__FILE__) . '/../../src/autoload.php';
 
 /**
  * Class Detecterio
- * @author Alexander Schikowsky
  * @copyright ProLexSoft UG
  */
 class Detecterio
@@ -28,17 +27,15 @@ class Detecterio
 
     /**
      * Check the request and make an
-     *
-     * @author Alexander Schikowsky
      */
     public function checkRequest()
     {
         $verifiedAsHuman = false;
 
-        if(isset($_POST['g-recaptcha-response'])){
-            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$this->googlePrivateCaptchaKey.'&response='.$_POST['g-recaptcha-response']);
+        if (isset($_POST['g-recaptcha-response'])) {
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $this->googlePrivateCaptchaKey . '&response=' . $_POST['g-recaptcha-response']);
             $responseData = json_decode($verifyResponse);
-            if($responseData->success){
+            if ($responseData->success) {
                 $verifiedAsHuman = true;
             }
         }
@@ -60,12 +57,13 @@ class Detecterio
         }
     }
 
-    public function test(){
+    public function dummyRequestFunction()
+    {
         $verifiedAsHuman = false;
 
         # Here you can do something to verify the human.
         # A sample integration to check how a human can be verified look at the folder integration/google and checkout the verification process
-        if($_REQUEST['isVerified']){
+        if ($_REQUEST['isVerified']) {
             $verifiedAsHuman = true;
         }
 

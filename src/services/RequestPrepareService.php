@@ -2,7 +2,6 @@
 
 /**
  * Class Detecterio
- * @author Alexander Schikowsky
  * @copyright ProLexSoft UG
  */
 class RequestPrepareService
@@ -10,7 +9,6 @@ class RequestPrepareService
 
     /**
      * @param $detecterSecret
-     * @author Alexander Schikowsky
      * @return array
      */
     public function prepareData($detecterSecret, $verifiedAsHuman = false)
@@ -33,10 +31,9 @@ class RequestPrepareService
     /**
      * There are many methods to select the IP from the request
      *
-     * @author Alexander Schikowsky
      * @return string
      */
-    private function getRequestIp() : string
+    private function getRequestIp()
     {
 
         $ipaddress = '';

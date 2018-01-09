@@ -2,7 +2,6 @@
 
 /**
  * Class RequestService
- * @author Alexander Schikowsky
  * @copyright ProLexSoft UG
  */
 class DetecterIOClient
@@ -14,14 +13,14 @@ class DetecterIOClient
      * URL /api/detect/badRequest
      *
      * @param $preparedData
-     * @author Alexander Schikowsky
      * @return bool
      */
-    public function isRequestBad($preparedData){
+    public function isRequestBad($preparedData)
+    {
 
-        $response = HttpRequester::HTTPPost(self::DETECTER_API_URL."/detect/badRequest", $preparedData);
-        
-        if($response['success'] == true){
+        $response = HttpRequester::post(self::DETECTER_API_URL . "/detect/badRequest", $preparedData);
+
+        if ($response['success'] == true) {
             return $response['data']['bad'];
         }
 
